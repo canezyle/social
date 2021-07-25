@@ -13,6 +13,7 @@
 <div id="app">
     <v-app>
         <front></front>
+        test
     </v-app>
 </div>
 
