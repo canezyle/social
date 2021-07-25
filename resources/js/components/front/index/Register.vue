@@ -81,7 +81,23 @@ export default {
   },
     methods : {
         doRegister : function () {
-            alert('Function not yet available');
+            axios.post('/register', {
+                email : this.email,
+                password : this.password,
+                name : this.name,
+                password_confirmation : this.confirm_password
+            }).then(function () {
+                location.reload();
+            }).catch(function (event) {
+                if (event.response.status === 422) {
+                    let msg = '';
+                    for (let index in event.response.data.errors) {
+                        msg += event.response.data.errors[index] + '\n';
+                    }
+                    alert(msg);
+                }
+                location.reload();
+            });
         }
     }
 }

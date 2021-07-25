@@ -53,7 +53,19 @@ export default {
 
     methods : {
         doLogin : function () {
-            alert('Function not yet available');
+            axios.post('/login', {
+                email : this.email,
+                password : this.password
+            }).then(function () {
+                location.reload();
+            }).catch(function (event) {
+                if (event.response.status === 419) {
+                    alert(event.response.data.message);
+                } else {
+                    alert(event.response.data.errors.email);
+                }
+                location.reload();
+            });
         }
     }
 }

@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -16,16 +16,10 @@
 <body>
 <div id="app">
     <v-app id="inspire">
-        <v-app-bar
-            app
-        >
-            <nav-menu></nav-menu>
-        </v-app-bar>
-
+        <nav-menu></nav-menu>
         <v-main class="grey lighten-3">
             <v-container>
                 <v-row>
-                    <side-menu></side-menu>
                     <v-col>
                         <v-sheet
                             min-height="20vh"
