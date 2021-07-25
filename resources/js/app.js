@@ -22,9 +22,24 @@ Vue.use(Vuetify);
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
+/**
+ * Index page
+ */
 Vue.component('front', require('./components/front/index/Index').default);
 Vue.component('login', require('./components/front/index/Login').default);
 Vue.component('register', require('./components/front/index/Register').default);
+
+/**
+ * Home pages
+ */
+Vue.component('news-feed', require('./components/front/home/page/NewsFeed').default);
+
+
+/**
+ * System UI
+ */
+Vue.component('nav-menu', require('./components/front/home/ui/NavMenu').default);
+Vue.component('side-menu', require('./components/front/home/ui/SideBar').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
